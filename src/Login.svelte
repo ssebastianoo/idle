@@ -13,7 +13,7 @@
     }
 
     var client_id = "ad006f6397254bbd9dbe5e6bfbb35407";
-    var redirect_uri = location.protocol + "//" + location.host;
+    var redirect_uri = location.protocol + "//" + location.host + location.pathname;
     let scope = "user-read-currently-playing";
     var state = makeID(16);
     let loginUrl = "https://accounts.spotify.com/authorize";
