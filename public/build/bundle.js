@@ -632,9 +632,9 @@ var app = (function () {
     			a = element("a");
     			t = text("log in");
     			attr_dev(a, "href", /*loginUrl*/ ctx[0]);
-    			add_location(a, file$5, 27, 4, 1018);
+    			add_location(a, file$5, 27, 4, 1038);
     			attr_dev(div, "class", "login");
-    			add_location(div, file$5, 26, 0, 993);
+    			add_location(div, file$5, 26, 0, 1013);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -683,7 +683,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Login', slots, []);
     	var client_id = "ad006f6397254bbd9dbe5e6bfbb35407";
-    	var redirect_uri = location.protocol + "//" + location.host;
+    	var redirect_uri = location.protocol + "//" + location.host + location.pathname;
     	let scope = "user-read-currently-playing";
     	var state = makeID(16);
     	let loginUrl = "https://accounts.spotify.com/authorize";
@@ -1697,7 +1697,7 @@ var app = (function () {
     			div = element("div");
     			if_block.c();
     			attr_dev(div, "class", "spotify");
-    			add_location(div, file$2, 39, 0, 1039);
+    			add_location(div, file$2, 39, 0, 1078);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
