@@ -138,17 +138,20 @@
 
 <style lang="scss">
     .player {
-        background-color: #f2da8a;
+        background-color: var(--color1);
         padding: 10px 10px;
-        border-radius: 7px;
+        border-radius: var(--border-radius);
         display: inline-block;
-        box-shadow: 10px 10px 40px #c2b68d;
+        box-shadow: 10px 10px 40px var(--color2);
+        width: 330px;
 
         .content {
             margin: 10px;
 
             p {
                 margin: 10px 0;
+                max-height: 140px;
+                overflow-y: auto;
             }
 
             .title {
@@ -172,11 +175,8 @@
         .cover {
             margin: 10px;
             img {
-                border-radius: 7px;
-            }
-
-            .fake {
-                width: 200px;
+                width: 100%;
+                border-radius: var(--border-radius);
             }
         }
     }

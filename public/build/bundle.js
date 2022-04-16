@@ -632,8 +632,9 @@ var app = (function () {
     			a = element("a");
     			t = text("log in");
     			attr_dev(a, "href", /*loginUrl*/ ctx[0]);
+    			attr_dev(a, "class", "svelte-196ox74");
     			add_location(a, file$5, 27, 4, 1038);
-    			attr_dev(div, "class", "login");
+    			attr_dev(div, "class", "login svelte-196ox74");
     			add_location(div, file$5, 26, 0, 1013);
     		},
     		l: function claim(nodes) {
@@ -1136,23 +1137,23 @@ var app = (function () {
     			if_block.c();
     			attr_dev(a0, "href", a0_href_value = /*song*/ ctx[0].item.external_urls.spotify);
     			attr_dev(a0, "target", "_blank");
-    			attr_dev(a0, "class", "svelte-k1tj2s");
+    			attr_dev(a0, "class", "svelte-xdchoc");
     			add_location(a0, file$3, 91, 16, 2715);
-    			attr_dev(p0, "class", "title svelte-k1tj2s");
+    			attr_dev(p0, "class", "title svelte-xdchoc");
     			add_location(p0, file$3, 90, 12, 2680);
     			attr_dev(a1, "href", a1_href_value = /*song*/ ctx[0].item.album.external_urls.spotify);
     			attr_dev(a1, "target", "_blank");
-    			attr_dev(a1, "class", "svelte-k1tj2s");
+    			attr_dev(a1, "class", "svelte-xdchoc");
     			add_location(a1, file$3, 96, 16, 2900);
-    			attr_dev(p1, "class", "album svelte-k1tj2s");
+    			attr_dev(p1, "class", "album svelte-xdchoc");
     			add_location(p1, file$3, 95, 12, 2865);
-    			attr_dev(p2, "class", "artists svelte-k1tj2s");
+    			attr_dev(p2, "class", "artists svelte-xdchoc");
     			add_location(p2, file$3, 100, 12, 3062);
-    			attr_dev(p3, "class", "time svelte-k1tj2s");
+    			attr_dev(p3, "class", "time svelte-xdchoc");
     			add_location(p3, file$3, 111, 12, 3445);
-    			attr_dev(div0, "class", "content svelte-k1tj2s");
+    			attr_dev(div0, "class", "content svelte-xdchoc");
     			add_location(div0, file$3, 89, 8, 2645);
-    			attr_dev(div1, "class", "cover svelte-k1tj2s");
+    			attr_dev(div1, "class", "cover svelte-xdchoc");
     			add_location(div1, file$3, 122, 8, 3931);
     		},
     		m: function mount(target, anchor) {
@@ -1290,7 +1291,7 @@ var app = (function () {
     			t1 = space();
     			attr_dev(a, "href", a_href_value = /*artist*/ ctx[5].external_urls.spotify);
     			attr_dev(a, "target", "_blank");
-    			attr_dev(a, "class", "artist svelte-k1tj2s");
+    			attr_dev(a, "class", "artist svelte-xdchoc");
     			add_location(a, file$3, 102, 20, 3156);
     		},
     		m: function mount(target, anchor) {
@@ -1331,7 +1332,7 @@ var app = (function () {
     			img = element("img");
     			if (!src_url_equal(img.src, img_src_value = /*song*/ ctx[0].item.album.images[1].url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Album Cover");
-    			attr_dev(img, "class", "svelte-k1tj2s");
+    			attr_dev(img, "class", "svelte-xdchoc");
     			add_location(img, file$3, 130, 16, 4190);
     		},
     		m: function mount(target, anchor) {
@@ -1368,7 +1369,7 @@ var app = (function () {
     			img = element("img");
     			if (!src_url_equal(img.src, img_src_value = /*song*/ ctx[0].item.album.images[1].url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Album Cover");
-    			attr_dev(img, "class", "fake svelte-k1tj2s");
+    			attr_dev(img, "class", "fake svelte-xdchoc");
     			add_location(img, file$3, 124, 16, 3997);
     		},
     		m: function mount(target, anchor) {
@@ -1415,7 +1416,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			if_block.c();
-    			attr_dev(div, "class", "player svelte-k1tj2s");
+    			attr_dev(div, "class", "player svelte-xdchoc");
     			add_location(div, file$3, 87, 0, 2599);
     		},
     		l: function claim(nodes) {

@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+:root {
+	--color1: #f2da8a;
+	--color2: #c2b68d;
+	--color3: #4a452e;
+	--color4: #89cae8;
+	--border-radius: 7px;
+}
+
 body {
 	font-family: 'Open Sans', sans-serif;
-	background-color: #89cae8;
-	color: #4a452e;
+	background-color: var(--color4);
+	color: var(--color3);
 }
 
 html, body {

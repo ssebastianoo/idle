@@ -27,3 +27,25 @@
 <div class="login">
     <a href={loginUrl}>log in</a>
 </div>
+
+<style lang="scss">
+    .login {
+        width: 100%;
+        height: 40px;
+        background-color: var(--color1);
+        border-radius: var(--border-radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        a {
+            font-size: 20px;
+            color: unset;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+</style>
