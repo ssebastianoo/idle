@@ -14,6 +14,10 @@
     }
 
     let loggedIn = false;
+    let error = {
+        error: false,
+        message: '',
+    };
 
     logged.subscribe((value) => {
         loggedIn = value;
@@ -28,10 +32,13 @@
                 },
             });
 
+            console.log(res.status);
             if (res.status === 200) {
                 logged.set(true);
             } else {
                 logged.set(false);
+                alert("couldn't log you in, make sure you're in whitelist (app not released yet)");
+                localStorage.removeItem('token');
             }
         }
     });
