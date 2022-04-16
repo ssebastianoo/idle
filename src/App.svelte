@@ -5,6 +5,8 @@
 </script>
 
 <main>
+    <Background />
+
     <div class="container">
         <div class="clock">
             <Clock />
@@ -14,7 +16,6 @@
         </div>
     </div>
 </main>
-<Background />
 
 <style lang="scss">
     main {

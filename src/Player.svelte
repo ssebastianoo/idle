@@ -189,4 +189,10 @@
             text-decoration: underline;
         }
     }
+
+    @media (max-width: 420px) {
+        .player {
+            width: 250px;
+        }
+    }
 </style>
