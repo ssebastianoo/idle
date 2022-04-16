@@ -1,5 +1,4 @@
 /node_modules/
-/public/node_modules/
 package-lock.json
 gh-pages.js
 
