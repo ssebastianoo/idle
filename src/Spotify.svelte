@@ -10,7 +10,7 @@
 
     if (token) {
         localStorage.setItem("token", token);
-        location.href = "/";
+        location.href = location.protocol + "//" + location.host + location.pathname;
     }
 
     let loggedIn = false;
