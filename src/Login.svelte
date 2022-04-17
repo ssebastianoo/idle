@@ -22,10 +22,15 @@
     loginUrl += "&scope=" + encodeURIComponent(scope);
     loginUrl += "&redirect_uri=" + encodeURIComponent(redirect_uri);
     loginUrl += "&state=" + encodeURIComponent(state);
+
+    function login() {
+        localStorage.setItem('shouldBeLogged', true);
+        location.href = loginUrl;
+    }
 </script>
 
 <div class="login">
-    <a href={loginUrl}>log in</a>
+    <span on:click|preventDefault={login}>log in</span>
 </div>
 
 <style lang="scss">
@@ -38,12 +43,10 @@
         align-items: center;
         justify-content: center;
         
-        a {
+        span {
             font-size: 20px;
-            color: unset;
-            text-decoration: none;
-
             &:hover {
+                cursor: pointer;
                 text-decoration: underline;
             }
         }

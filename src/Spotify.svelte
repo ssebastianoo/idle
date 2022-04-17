@@ -36,10 +36,14 @@
                 logged.set(true);
             } else {
                 logged.set(false);
-                alert("couldn't log you in, make sure you're in whitelist (app not released yet)");
+
+                if (localStorage.getItem('shouldBeLogged') === 'true') {
+                    alert("couldn't log you in, make sure you're in whitelist (app not released yet)");
+                }
                 localStorage.removeItem('token');
             }
         }
+        localStorage.setItem('shouldBeLogged', false);
     });
 </script>
 
