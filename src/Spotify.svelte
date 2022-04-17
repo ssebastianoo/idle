@@ -1,7 +1,6 @@
 <script>
     import { onMount } from "svelte";
     import Login from "./Login.svelte";
-    import Auth from "./Auth.svelte";
     import Player from "./Player.svelte";
     import { logged } from "./stores";
 

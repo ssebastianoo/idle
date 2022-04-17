@@ -14,37 +14,37 @@
     }, 1000);
 
     const fakeSong = {
-                    fake: true,
-                    progress_ms: 0,
-                    item: {
-                        duration_ms: 0,
-                        id: 42,
-                        name: "No song playing",
-                        external_urls: {
-                            spotify: "",
-                        },
-                        album: {
-                            name: "No album playing",
-                            external_urls: {
-                                spotify: "",
-                            },
-                            images: [
-                                {},
-                                {
-                                    url: "./Spotify_Icon_RGB_White.png",
-                                },
-                            ],
-                        },
-                        artists: [
-                            {
-                                name: "No artist playing",
-                                external_urls: {
-                                    spotify: "",
-                                },
-                            },
-                        ],
+        fake: true,
+        progress_ms: 0,
+        item: {
+            duration_ms: 0,
+            id: 42,
+            name: "No song playing",
+            external_urls: {
+                spotify: "",
+            },
+            album: {
+                name: "No album playing",
+                external_urls: {
+                    spotify: "",
+                },
+                images: [
+                    {},
+                    {
+                        url: "./Spotify_Icon_RGB_White.png",
                     },
-                };
+                ],
+            },
+            artists: [
+                {
+                    name: "No artist playing",
+                    external_urls: {
+                        spotify: "",
+                    },
+                },
+            ],
+        },
+    };
 
     async function newSong() {
         var res = await fetch(
@@ -128,11 +128,16 @@
                     class="fake"
                 />
             {:else}
-                <img src={song.item.album.images[1].url} alt="Album Cover" />
+                <a href={song.item.external_urls.spotify} target="_blank">
+                    <img
+                        src={song.item.album.images[1].url}
+                        alt="Album Cover"
+                    />
+                </a>
             {/if}
         </div>
     {:else}
-        asas
+        loading...
     {/if}
 </div>
 
@@ -144,6 +149,7 @@
         display: inline-block;
         box-shadow: 10px 10px 40px var(--color2);
         width: 330px;
+        transition-duration: .4s;
 
         .content {
             margin: 10px;
@@ -193,6 +199,12 @@
     @media (max-width: 420px) {
         .player {
             width: 250px;
+        }
+    }
+
+    @media (max-height: 647px) and (min-width: 542px) {
+        .player {
+            display: flex;
         }
     }
 </style>

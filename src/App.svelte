@@ -23,6 +23,7 @@
         align-items: center;
         justify-content: center;
         min-height: 100vh;
+        position: relative;
         
         .container {
             margin: 0;
@@ -30,6 +31,15 @@
 
             div {
                 margin: 20px;
+            }
+        }
+    }
+
+    @media (max-height: 647px) and (min-width: 542px) {
+        main {
+            .container {
+                display: flex;
+                align-items: center;
             }
         }
     }
