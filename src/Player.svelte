@@ -1,12 +1,12 @@
 <script>
     import { onMount } from "svelte";
-    import { logged } from "./stores";
+    import { logged, query, showLyrics } from "./stores";
     import Progress from "./Progress.svelte";
+    import Lyrics from "./Lyrics.svelte";
 
     const token = localStorage.getItem("token");
     let song;
     let currentMs = 0;
-
     onMount(newSong);
 
     setInterval(() => {
@@ -72,15 +72,37 @@
                 if (song) {
                     if (song.item.id !== data.item.id) {
                         song = data;
+                        query.update(
+                            (n) =>
+                                song.item.name + " " + song.item.artists[0].name
+                        );
                     }
                 } else {
                     song = data;
+                    query.update(
+                        (n) => song.item.name + " " + song.item.artists[0].name
+                    );
                 }
 
                 currentMs = data.progress_ms;
             } else {
                 song = fakeSong;
             }
+        }
+    }
+
+    let lyricsVisible = false;
+    showLyrics.subscribe((value) => {
+        lyricsVisible = value;
+    });
+
+    function checkLyrics(e) {
+        if (lyricsVisible) {
+            showLyrics.set(false);
+            e.target.innerText = 'Show lyrics';
+        } else {
+            showLyrics.set(true);
+            e.target.innerText = 'Hide lyrics';
         }
     }
 </script>
@@ -127,6 +149,7 @@
             <Progress duration={song.item.duration_ms} current={currentMs} />
         </div>
         <div class="cover">
+            <Lyrics />
             {#if song.fake}
                 <img
                     src={song.item.album.images[1].url}
@@ -141,6 +164,7 @@
                     />
                 </a>
             {/if}
+            <button on:click|preventDefault={checkLyrics}>Show lyrics</button>
         </div>
     {:else}
         loading...
@@ -151,11 +175,12 @@
     .player {
         background-color: var(--color1);
         padding: 10px 10px;
+        padding-bottom: 5px;
         border-radius: var(--border-radius);
         display: inline-block;
         box-shadow: 10px 10px 40px var(--color2);
         width: 330px;
-        transition-duration: .4s;
+        transition-duration: 0.4s;
 
         .content {
             margin: 10px;
@@ -165,7 +190,8 @@
                 position: absolute;
                 width: 50px;
                 right: 0;
-                transition: width .4s;
+                bottom: 20px;
+                transition: width 0.4s;
             }
 
             p {
@@ -194,9 +220,27 @@
         }
 
         .cover {
+            position: relative;
             margin: 10px;
+            margin-bottom: 0;
+            height: 100%;
             img {
                 width: 100%;
+            }
+
+            button {
+                color: unset;
+                background-color: #e8d699;
+                border: none;
+                cursor: pointer;
+                padding: 5px;
+                border-radius: 4px;
+                width: 100%;
+                font-family: unset;
+
+                &:hover {
+                    background-color: #f2c18a;
+                }
             }
         }
     }

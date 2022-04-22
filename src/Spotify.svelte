@@ -31,7 +31,6 @@
                 },
             });
 
-            console.log(res.status);
             if (res.status === 200) {
                 logged.set(true);
             } else {
