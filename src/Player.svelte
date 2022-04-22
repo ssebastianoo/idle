@@ -88,6 +88,12 @@
 <div class="player">
     {#if song}
         <div class="content">
+            <img
+                src="./Spotify_Icon_RGB_White.png"
+                alt="Spotify Icon"
+                class="spotify-icon"
+            />
+
             <p class="title">
                 <a href={song.item.external_urls.spotify} target="_blank"
                     >{song.item.name}</a
@@ -153,6 +159,14 @@
 
         .content {
             margin: 10px;
+            position: relative;
+
+            .spotify-icon {
+                position: absolute;
+                width: 50px;
+                right: 0;
+                transition: width .4s;
+            }
 
             p {
                 margin: 10px 0;
@@ -161,6 +175,7 @@
             }
 
             .title {
+                margin-top: 0;
                 font-size: 25px;
             }
 
@@ -200,11 +215,33 @@
         .player {
             width: 250px;
         }
+
+        .spotify-icon {
+            width: 45px !important;
+        }
     }
 
     @media (max-height: 647px) and (min-width: 542px) {
         .player {
             display: flex;
+            width: 500px;
+
+            .content {
+                width: 50%;
+            }
+
+            .cover {
+                width: 50%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .spotify-icon {
+            bottom: 0;
+            left: 0;
+            width: 40px !important;
         }
     }
 </style>

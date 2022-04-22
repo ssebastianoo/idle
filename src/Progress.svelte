@@ -23,6 +23,8 @@
         width: 100%;
         background-color: RGBA(0,0,0,0.4);
         border-radius: 1000px;
+        position: relative;
+        z-index: 999;
 
         .point {
             height: 10px;

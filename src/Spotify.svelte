@@ -1,9 +1,9 @@
 <script>
     import { onMount } from "svelte";
+    import { logged } from "./stores";
     import Login from "./Login.svelte";
     import Player from "./Player.svelte";
-    import { logged } from "./stores";
-
+    
     var urlParams = new URLSearchParams(window.location.hash.replace("#", "?"));
     var token = urlParams.get("access_token");
 
