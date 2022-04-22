@@ -197,7 +197,6 @@
             margin: 10px;
             img {
                 width: 100%;
-                border-radius: var(--border-radius);
             }
         }
     }
