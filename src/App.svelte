@@ -1,6 +1,7 @@
 <script>
     import Clock from "./Clock.svelte";
     import Spotify from "./Spotify.svelte";
+    import Search from "./Search.svelte";
     import Background from "./Background.svelte";
 </script>
 
@@ -8,6 +9,9 @@
     <Background />
 
     <div class="container">
+        <div class="search">
+            <Search />
+        </div>
         <div class="clock">
             <Clock />
         </div>
