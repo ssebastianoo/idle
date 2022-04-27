@@ -1,14 +1,15 @@
 <script>
+    import Background from "./Background.svelte";
     import Clock from "./Clock.svelte";
     import Spotify from "./Spotify.svelte";
     import Search from "./Search.svelte";
-    import Background from "./Background.svelte";
+    import Favorites from "./Favorites.svelte";
 </script>
 
 <main>
     <Background />
-
     <div class="container">
+       <Favorites />
         <div class="search">
             <Search />
         </div>

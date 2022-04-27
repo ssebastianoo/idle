@@ -149,7 +149,7 @@
             <Progress duration={song.item.duration_ms} current={currentMs} />
         </div>
         <div class="cover">
-            <Lyrics />
+            <!-- <Lyrics /> -->
             {#if song.fake}
                 <img
                     src={song.item.album.images[1].url}
@@ -164,7 +164,7 @@
                     />
                 </a>
             {/if}
-            <button on:click|preventDefault={checkLyrics}>Show lyrics</button>
+            <!-- <button on:click|preventDefault={checkLyrics}>Show lyrics</button> -->
         </div>
     {:else}
         loading...
@@ -228,7 +228,7 @@
                 width: 100%;
             }
 
-            button {
+            :global(button) {
                 color: unset;
                 background-color: #e8d699;
                 border: none;
