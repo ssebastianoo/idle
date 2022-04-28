@@ -88,6 +88,12 @@
 </div>
 
 <style lang="scss">
+    @media (max-height: 647px) and (min-width: 542px) {
+        .search {
+            display: none !important;
+        }
+    }
+
     .engines-parent {
         position: fixed;
         top: 0;
@@ -143,19 +149,9 @@
         }
 
         input {
-            border: none;
-            background: none;
-            font-family: unset;
-            color: unset;
-            outline: none;
-            border-bottom: solid 1px RGBA(0, 0, 0, 0);
-            transition: border-bottom-color 0.2s;
             width: 100%;
             padding: 2px;
-
-            &:focus {
-                border-bottom-color: var(--color3);
-            }
+            background: none;
         }
     }
 </style>

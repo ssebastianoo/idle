@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import { editFavorites } from "./stores";
 
     let favorites = Array();
     let input, lastPressed;
@@ -58,10 +59,25 @@
             showSaved = false;
         }, 500);
     }
+
+    editFavorites.subscribe((edit) => {
+        if (edit) {
+            showDashboard = true;
+        } else {
+            showDashboard = false;
+        }
+    });
+
+    function closeFavorites(e) {
+        if (Array.from(e.target.classList).includes("dashboard-parent")) {
+            showDashboard = false;
+            editFavorites.set(false);
+        }
+    }
 </script>
 
 {#if showDashboard}
-    <div class="dashboard-parent">
+    <div class="dashboard-parent" on:click={closeFavorites}>
         {#if showSaved}
             <p class="saved">saved!</p>
         {/if}
@@ -112,8 +128,25 @@
 </div>
 
 <style lang="scss">
-    img {
-        width: 40px;
+    @media (max-height: 647px) and (min-width: 542px) {
+        .favorites {
+            display: none !important;
+        }
+    }
+    
+    .favorites {
+        width: 330px;
+        display: flex;
+        overflow: auto;
+
+        a {
+            &:not(:first-child) {
+                margin-left: 20px;
+            }
+            img {
+                width: 30px;
+            }
+        }
     }
 
     .dashboard-parent {
@@ -143,6 +176,19 @@
             border-radius: var(--border-radius);
             width: 450px;
 
+            .add-favorite {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                border-bottom: 1px solid var(--color2);
+
+                button {
+                    font-size: 25px;
+                    margin-left: 10px;
+                }
+            }
+
             .item {
                 padding: 10px;
                 display: flex;
@@ -164,7 +210,7 @@
                     justify-content: space-between;
 
                     .edit-favorite {
-                        width: 130px;
+                        width: 150px;
                     }
                 }
             }

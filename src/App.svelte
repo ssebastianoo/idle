@@ -4,12 +4,16 @@
     import Spotify from "./Spotify.svelte";
     import Search from "./Search.svelte";
     import Favorites from "./Favorites.svelte";
+    import Settings from "./Settings.svelte";
 </script>
 
 <main>
     <Background />
+    <Settings />
     <div class="container">
-       <Favorites />
+       <div class="favorites">
+        <Favorites />
+       </div>
         <div class="search">
             <Search />
         </div>

@@ -1,20 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 :root {
-	--color1: #f2da8a;
-	--color2: #c2b68d;
-	--color3: #4a452e;
-	--color4: #89cae8;
-	--border-radius: 7px;
+    --color1: #f2da8a;
+    --color2: #c2b68d;
+    --color3: #4a452e;
+    --color4: #89cae8;
+    --border-radius: 7px;
 }
 
 body {
-	font-family: 'Open Sans', sans-serif;
-	background-color: var(--color4);
-	color: var(--color3);
+    font-family: "Open Sans", sans-serif;
+    background-color: var(--color4);
+    color: var(--color3);
 }
 
-html, body {
-	margin: 0;
-	padding: 0;
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    border: none;
+    background: none;
+	background-color: RGBA(0,0,0,0.04);
+    font-family: unset;
+    color: unset;
+    outline: none;
+    border-bottom: solid 1px RGBA(0, 0, 0, 0);
+    transition: border-bottom-color 0.2s;
+	border-radius: 4px;
+	padding: 5px;
+}
+
+input:focus {
+	border-radius: 0;
+	background: none;
+    border-bottom-color: var(--color3);
+}
+
+button {
+	cursor: pointer;
+	background: none;
+	border: none;
 }
