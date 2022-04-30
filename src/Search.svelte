@@ -28,8 +28,6 @@
         engine = engines[localStorage.getItem("engine")];
     else engine = engines.google;
 
-    console.log(engine);
-
     onMount(() => {
         searchInput.addEventListener("keydown", (e) => {
             if (e.keyCode === 13) {
@@ -88,12 +86,6 @@
 </div>
 
 <style lang="scss">
-    @media (max-height: 647px) and (min-width: 542px) {
-        .search {
-            display: none !important;
-        }
-    }
-
     .engines-parent {
         position: fixed;
         top: 0;

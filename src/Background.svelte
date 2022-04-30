@@ -11,7 +11,7 @@
         width: 100%;
         height: 100%;
         z-index: -1;
-        overflow-x: hidden;
+        overflow: hidden;
 
         .sun {
             width: 250px;

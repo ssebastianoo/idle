@@ -1,6 +1,12 @@
 <script>
     import { editFavorites } from "./stores"; 
     let showSettings = false;
+
+    function closeSettings(e) {
+        if (Array.from(e.target.classList).includes("settings-parent")) {
+            showSettings = false;
+        }
+    }
 </script>
 
 <div class="settings-icon" on:click={() => {showSettings=true}}>
@@ -8,7 +14,7 @@
 </div>
 
 {#if showSettings}
-    <div class="settings-parent">
+    <div class="settings-parent" on:click|preventDefault={closeSettings}>
         <div class="settings">
             <div class="setting">
                 <p>Edit favorites</p>

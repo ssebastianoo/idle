@@ -179,8 +179,8 @@
         border-radius: var(--border-radius);
         display: inline-block;
         box-shadow: 10px 10px 40px var(--color2);
-        width: 330px;
         transition-duration: 0.4s;
+        width: 270px;
 
         .content {
             margin: 10px;
@@ -256,8 +256,8 @@
 
     @media (max-width: 420px) {
         .player {
-            width: 250px;
-        }
+            width: 230px;
+        } 
 
         .spotify-icon {
             width: 45px !important;

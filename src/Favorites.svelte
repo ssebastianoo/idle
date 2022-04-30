@@ -128,21 +128,27 @@
 </div>
 
 <style lang="scss">
-    @media (max-height: 647px) and (min-width: 542px) {
+    @media (max-width: 420px) {
         .favorites {
-            display: none !important;
+            width: 250px !important;
+            a {
+                &:not(:first-child) {
+                    margin-left: 10px !important;
+                }
+                img {
+                    width: 23px !important;
+                }
+            }
         }
     }
-    
+
     .favorites {
-        width: 330px;
         display: flex;
         overflow: auto;
+        justify-content: space-between;
+        width: 290px;
 
         a {
-            &:not(:first-child) {
-                margin-left: 20px;
-            }
             img {
                 width: 30px;
             }
