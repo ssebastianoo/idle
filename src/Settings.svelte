@@ -18,8 +18,11 @@
         <div class="settings">
             <div class="setting">
                 <p>Edit favorites</p>
-                <button on:click|preventDefault={() => {showSettings = false; editFavorites.set(true)}}><i class="fa-solid fa-pen-to-square" /></button>
+                <button class="favorites-button" on:click|preventDefault={() => {showSettings = false; editFavorites.set(true)}}><i class="fa-solid fa-pen-to-square" /></button>
             </div>
+            <duv class="setting">
+                <button on:click|preventDefault={() => {localStorage.clear(); location.reload();}}>Logout</button>
+            </duv>
         </div>
     </div>
 {/if}
@@ -70,12 +73,21 @@
                     border-top: 1px solid black;
                 }
 
-                button {
+                .favorites-button {
                     background: none;
                     border: none;
                     cursor: pointer;
                     font-size: 25px;
                     margin-left: 10px;
+                    color: unset;
+                }
+
+                button:not(.favorites-button) {
+                    background-color: RGBA(0, 0, 0, 0.05);
+                    padding: 10px;
+                    font-family: unset;
+                    color: unset;
+                    border-radius: 3px;
                 }
             }
         }
