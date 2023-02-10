@@ -23,24 +23,24 @@ body {
 input {
     border: none;
     background: none;
-	background-color: RGBA(0,0,0,0.04);
+    background-color: RGBA(0, 0, 0, 0.04);
     font-family: unset;
     color: unset;
     outline: none;
     border-bottom: solid 1px RGBA(0, 0, 0, 0);
     transition: border-bottom-color 0.2s;
-	border-radius: 4px;
-	padding: 5px;
+    border-radius: 4px;
+    padding: 5px;
 }
 
 input:focus {
-	border-radius: 0;
-	background: none;
+    border-radius: 0;
+    background: none;
     border-bottom-color: var(--color3);
 }
 
 button {
-	cursor: pointer;
-	background: none;
-	border: none;
+    cursor: pointer;
+    background: none;
+    border: none;
 }

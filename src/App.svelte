@@ -1,10 +1,10 @@
 <script>
-    import Background from "./Background.svelte";
-    import Clock from "./Clock.svelte";
-    import Spotify from "./Spotify.svelte";
-    import Search from "./Search.svelte";
-    import Favorites from "./Favorites.svelte";
-    import Settings from "./Settings.svelte";
+    import Background from "./lib/Background.svelte";
+    import Clock from "./lib/Clock.svelte";
+    import Spotify from "./lib/Spotify.svelte";
+    import Search from "./lib/Search.svelte";
+    import Favorites from "./lib/Favorites.svelte";
+    import Settings from "./lib/Settings.svelte";
 </script>
 
 <main>
@@ -62,7 +62,8 @@
                 align-items: center;
                 width: unset;
 
-                .favorites, .search {
+                .favorites,
+                .search {
                     display: none;
                 }
             }
